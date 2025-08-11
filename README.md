@@ -90,7 +90,7 @@
 4) Настройте на коммутаторах доступа порты для подключения пользовательских устройств и аплинки. Также на пользовательских портах коммутатора следует настроить:
 
    
-     * port-security на 3 адреса,
+* port-security на 3 адреса,
 
 ```
 interface range fastEthernet 0/1-24
@@ -101,8 +101,7 @@ switchport port-security mac-address sticky
 switchport port-security violation shutdown
 ```
 
-
-     * dhcp-snooping, 
+* dhcp-snooping, 
 
 ```
 ip dhcp snooping
@@ -110,8 +109,7 @@ interface range gigabitEthernet 0/1-2
 ip dhcp snooping trust
 ```
 
-
-     * portfast и RSTP, 
+* portfast и RSTP, 
 
 ```
 spanning-tree mode rapid-pvst
@@ -120,7 +118,8 @@ spanning-tree portfast
 
 ```
     
-     
+
+
   ![image](https://user-images.githubusercontent.com/5977962/192258720-b8f713d3-e42a-4af4-87ed-36efc8629c71.png)
 
 4) Настройте на коммутаторах ядра: 
