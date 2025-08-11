@@ -88,7 +88,7 @@
    НЕ забыть на ядре настроить дополнительно по 5 интерфейсов для добавления пяти новых коммутаторов. 
 
 4) Настройте на коммутаторах доступа порты для подключения пользовательских устройств и аплинки. Также на пользовательских портах коммутатора следует настроить: 
-     * port-security на 3 адреса,
+     *** port-security на 3 адреса,
 
 ```
 interface range fastEthernet 0/1-24
@@ -99,7 +99,7 @@ switchport port-security mac-address sticky
 switchport port-security violation shutdown
 ```
 
-     * dhcp-snooping, 
+     *** dhcp-snooping, 
 
 ```
 ip dhcp snooping
@@ -107,7 +107,7 @@ interface range gigabitEthernet 0/1-2
 ip dhcp snooping trust
 ```
 
-     * portfast и RSTP, 
+     *** portfast и RSTP, 
 
 ```
 spanning-tree mode rapid-pvst
