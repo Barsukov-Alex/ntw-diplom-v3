@@ -101,6 +101,7 @@ switchport port-security mac-address sticky
 switchport port-security violation shutdown
 ```
 
+
      * dhcp-snooping, 
 
 ```
@@ -108,6 +109,7 @@ ip dhcp snooping
 interface range gigabitEthernet 0/1-2
 ip dhcp snooping trust
 ```
+
 
      * portfast и RSTP, 
 
