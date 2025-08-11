@@ -61,7 +61,7 @@
 
 Нужно настроить отказоустойчивую, безопасную, масштабируемую сеть и запустить на ней пользовательские сервисы. 
 
-### Этапы выполнения
+### Этапы выполнения (Команды даны для общего понимания в самой работе используются другие порты)
 
 1) Соберите топологию сети в Cisco Packet tracer. 
       Модели сетевого оборудования: 
@@ -88,10 +88,34 @@
    НЕ забыть на ядре настроить дополнительно по 5 интерфейсов для добавления пяти новых коммутаторов. 
 
 4) Настройте на коммутаторах доступа порты для подключения пользовательских устройств и аплинки. Также на пользовательских портах коммутатора следует настроить: 
-     * port-security на 3 адреса, 
+     * port-security на 3 адреса,
+
+```
+interface range fastEthernet 0/1-24
+switchport mode access
+switchport port-security
+switchport port-security maximum 3
+switchport port-security mac-address sticky
+switchport port-security violation shutdown
+```
+
      * dhcp-snooping, 
-     * portfast, 
-     * RSTP.
+
+```
+ip dhcp snooping
+interface range gigabitEthernet 0/1-2
+ip dhcp snooping trust
+```
+
+     * portfast и RSTP, 
+
+```
+spanning-tree mode rapid-pvst
+interface range fastEthernet 0/1-24
+spanning-tree portfast
+
+```
+    
      
   ![image](https://user-images.githubusercontent.com/5977962/192258720-b8f713d3-e42a-4af4-87ed-36efc8629c71.png)
 
